@@ -60,7 +60,7 @@ function factorialDigitSum(input){
 	return digitSum;
 }
 
-// console.log(factorialDigitSum(100))
+console.log(factorialDigitSum(100))
 
 // ---------------------------------------(3)---------------------------------------
 
@@ -93,18 +93,13 @@ function checkAbundance(number){
 	}
 }
 function checkAbundantSummations(number){
-	var abundanceFound = false;
 	for(x = 1; x <= number/2; x++){
 		var a = number - x;
 		if((checkAbundance(x))&&(checkAbundance(a))){
-			abundanceFound = true;
 			return false;
-			break;
 		}
 	}
-	if(!abundanceFound){
 		return true;
-	}
 }
 function sumTheIntegers(){
 	var integerSum = 0;
@@ -118,10 +113,12 @@ function sumTheIntegers(){
 	}
 	var end = new Date();
 	var finishTime = end.getTime();
-	var runTime = ((finishTime - startTime)/1000)/60;
-	return [integerSum,runTime+' minutes'];
+	var runTimeMin = Math.floor(((finishTime - startTime)/1000)/60)
+	var runTimeSec = Math.floor(((finishTime-startTime)/1000)%60);
+	return [integerSum,runTimeMin+' minutes and '+runTimeSec+' seconds'];
 }
 // console.log(sumTheIntegers())
+// Answer: 4,179,871
 
 
 // ---------------------------------(4)------------------------------------
@@ -151,24 +148,17 @@ function sumTheIntegers(){
 // How many circular primes are there below one million?
 
 function checkPrime(number){
-	var divisors = [];
-	for(i = 2; i < number; i++){
+	for(i = 2; i <= number/2; i++){
 		var divisor = number/i;
 		var roundedDivisor = Math.round(number/i);
 		if(divisor == roundedDivisor){
-			divisors.push(divisor);
+			return false;
 		}
 	}
-	if(divisors.length == 0){
-		return true;
-	}else{
-		return false;
-	}
-
+	return true;
 }
 
 
-console.log(checkPrime(43))
 
 
 
