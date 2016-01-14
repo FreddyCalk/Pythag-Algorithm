@@ -60,7 +60,7 @@ function factorialDigitSum(input){
 	return digitSum;
 }
 
-console.log(factorialDigitSum(100))
+// console.log(factorialDigitSum(100))
 
 // ---------------------------------------(3)---------------------------------------
 
@@ -172,8 +172,32 @@ while(expected_return < 2){
 	jackpot += 100000;
 }
 
-console.log(jackpot);
+// console.log(jackpot);
 
+
+
+// ------------------------------(7)-------------------------------------
+
+// Function to reverse a string and check if it is a palindrome.
+
+
+
+function reverseThis(input){
+	var loopArray = input.split("");
+	var inputReverse = "";
+	for(i=loopArray.length-1;i>=0;i--){
+		inputReverse += loopArray[i];
+	};
+	if(input == inputReverse){
+	    alert("you found a palindrome!");
+	    console.log(input,inputReverse)
+	}else{
+		console.log(input,inputReverse)
+	}
+
+}
+
+reverseThis('onomotopia');
 
 
 
