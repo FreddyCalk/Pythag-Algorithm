@@ -161,6 +161,24 @@ function checkPrime(number){
 
 
 
+// -------------------------------(6)--------------------------------------
+// Check the value the powerball jackpot needs to be in order for the expected value of the ticket to exceed the purchase price.
+
+var jackpot = 1000000000;
+var expected_return = 0;
+
+while(expected_return < 2){
+	expected_return = jackpot*(1-.396)*(1-.06)*(1-.55)*(1/292201338) + 1000000*(1-.396)*(1-.06)*(1/11688053) + 50000*(1-.25)*(1-.06)*(1/913129.18) + 100*(1-.25)*(1-.06)*(1/36525.17) + 100*(1-.25)*(1-.06)*(1/14494.11);
+	jackpot += 100000;
+}
+
+console.log(jackpot);
+
+
+
+
+
+
 
 
 
